@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
@@ -18,6 +19,10 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
+});
+
+app.post('/', (req, res) => {
+  res.send('POST received.');
 });
 
 app.use(function errorHandler(error, req, res, next) {
